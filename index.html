@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Magic Mirror</title>
+	<meta name="google" content="notranslate" />
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="fonts/roboto.css">
+	<!-- custom.css is loaded by the loader.js to make sure it's loaded after the module css files. -->
+
+	<script type="text/javascript">
+		var version = "#VERSION#";
+	</script>
+</head>
+<body>
+	<div class="region fullscreen below"><div class="container"></div></div>
+	<div class="region top bar">
+		<div class="container"></div>
+		<div class="region top left"><div class="container"></div></div>
+		<div class="region top center"><div class="container"></div></div>
+		<div class="region top right"><div class="container"></div></div>
+	</div>
+	<div class="region upper third left"><div class="container"></div></div>
+<div class="region upper third right"><div class="container">
+<div class="container">
+    <div id="slideshow">
+      <img alt="slideshow" src="http://www.imajmuhendislik.com.tr/slideAnimation/rek1.png" id="imgClickAndChange" onclick="changeImage()" /> 
+	
+    </div>
+</div>
+<script>
+  //  var imgs = ["http://thumb7.shutterstock.com/photos/thumb_large/253822/156271139.jpg", "http://thumb9.shutterstock.com/photos/thumb_large/554278/132632972.jpg", "http://thumb7.shutterstock.com/photos/thumb_large/101304/133879079.jpg", "http://thumb101.shutterstock.com/photos/thumb_large/422038/422038,1327874090,3.jpg", "http://thumb1.shutterstock.com/photos/thumb_large/975647/149914934.jpg", "http://thumb9.shutterstock.com/photos/thumb_large/195826/148988282.jpg"];
+var imgs = ["http://www.imajmuhendislik.com.tr/slideAnimation/rek2.png","http://www.imajmuhendislik.com.tr/slideAnimation/rek3.png","http://www.imajmuhendislik.com.tr/slideAnimation/rek1.png","http://www.imajmuhendislik.com.tr/slideAnimation/rek4.png"];
+    function changeImage(dir) {
+        var img = document.getElementById("imgClickAndChange");
+        img.src = imgs[imgs.indexOf(img.src) + (dir || 1)] || imgs[dir ? imgs.length - 1 : 0];
+    }
+
+    document.onkeydown = function(e) {
+        e = e || window.event;
+        if (e.keyCode == '37') {
+            changeImage(-1) //left <- show Prev image
+        } else if (e.keyCode == '39') {
+            // right -> show next image
+            changeImage()
+        }
+    }
+</script>
+
+
+	<div class="region middle center"><div class="container"></div></div>
+	<div class="region lower third"><div class="container"><br/></div></div>
+	<div class="region bottom bar">
+		<div class="container"></div>
+		<div class="region bottom left"><div class="container"></div></div>
+		<div class="region bottom center"><div class="container"></div></div>
+		<div class="region bottom right"><div class="container"></div></div>
+	</div>
+	<div class="region fullscreen above"><div class="container"></div></div>
+	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+	<script type="text/javascript" src="js/defaults.js"></script>
+	<script type="text/javascript" src="config/config.js"></script>
+	<script type="text/javascript" src="vendor/vendor.js"></script>
+	<script type="text/javascript" src="modules/default/defaultmodules.js"></script>
+	<script type="text/javascript" src="js/logger.js"></script>
+	<script type="text/javascript" src="translations/translations.js"></script>
+	<script type="text/javascript" src="js/translator.js"></script>
+	<script type="text/javascript" src="js/class.js"></script>
+	<script type="text/javascript" src="js/module.js"></script>
+	<script type="text/javascript" src="js/loader.js"></script>
+	<script type="text/javascript" src="js/socketclient.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
